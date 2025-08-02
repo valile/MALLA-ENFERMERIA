@@ -111,9 +111,30 @@ ciclos.forEach(ciclo => {
 
   malla.appendChild(div);
 });
-// Hacer que se puedan tachar los cursos al hacer clic
+// Restaurar cursos marcados desde el almacenamiento
+document.addEventListener("DOMContentLoaded", () => {
+  const marcados = JSON.parse(localStorage.getItem("cursosCursados")) || [];
+
+  marcados.forEach(id => {
+    const curso = document.querySelector(`[data-id="${id}"]`);
+    if (curso) curso.classList.add("cursado");
+  });
+});
+
+// Guardar o quitar cursos al hacer clic
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("curso")) {
     e.target.classList.toggle("cursado");
+
+    const id = e.target.dataset.id;
+    let marcados = JSON.parse(localStorage.getItem("cursosCursados")) || [];
+
+    if (e.target.classList.contains("cursado")) {
+      if (!marcados.includes(id)) marcados.push(id);
+    } else {
+      marcados = marcados.filter(cursoId => cursoId !== id);
+    }
+
+    localStorage.setItem("cursosCursados", JSON.stringify(marcados));
   }
 });
