@@ -104,8 +104,9 @@ ciclos.forEach(ciclo => {
   
   ciclo.cursos.forEach(curso => {
     const cursoDiv = document.createElement("div");
-    cursoDiv.className = "curso";
-    cursoDiv.textContent = curso;
+  cursoDiv.className = "curso";
+cursoDiv.textContent = curso;
+cursoDiv.setAttribute("data-id", `${ciclo.numero}-${curso}`);
     div.appendChild(cursoDiv);
   });
 
