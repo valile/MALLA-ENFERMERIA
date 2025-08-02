@@ -1,4 +1,42 @@
 body {
-  background-color: #f0f8ff;
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
+  margin: 30px;
+  background-color: #f5f9ff;
+}
+
+h1 {
+  text-align: center;
+  color: #2a4d69;
+  margin-bottom: 30px;
+}
+
+#malla {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ciclo {
+  background-color: #ddeeff;
+  border-left: 5px solid #2a4d69;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.ciclo h2 {
+  margin-top: 0;
+  color: #1e3d59;
+}
+
+.curso {
+  background-color: #ffffff;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s;
+}
+
+.curso:hover {
+  background-color: #e3f2fd;
+  cursor: pointer;
 }
