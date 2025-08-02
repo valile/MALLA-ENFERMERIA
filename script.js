@@ -111,3 +111,9 @@ ciclos.forEach(ciclo => {
 
   malla.appendChild(div);
 });
+// Hacer que se puedan tachar los cursos al hacer clic
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("curso")) {
+    e.target.classList.toggle("cursado");
+  }
+});
